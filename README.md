@@ -46,6 +46,7 @@ A modern, clean, and fast personal developer portfolio built with **HTML, CSS, J
 ├── index.html
 ├── Dockerfile
 ├── .dockerignore
+├── docker-compose.yml
 └── README.md
 ```
 
@@ -53,16 +54,10 @@ A modern, clean, and fast personal developer portfolio built with **HTML, CSS, J
 
 ## 🐳 Running with Docker
 
-### **Build the image**
+### **Build the image And Run the container in one cli**
 ```bash
-docker build -t portfolio:latest .
+docker-compose up -d --build
 ```
-
-### **Run the container**
-```bash
-docker run --rm -p 8080:80 portfolio:latest
-```
-
 Your portfolio is now available at:
 
 👉 **http://localhost:8080**
