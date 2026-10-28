@@ -61,6 +61,27 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+// 4) Subtle pointer-driven depth for the hero artwork.
+const heroVisual = document.querySelector('.hero-visual');
+if (heroVisual) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  heroVisual.addEventListener('pointermove', (event) => {
+    if (reduceMotion.matches || event.pointerType === 'touch') return;
+    const bounds = heroVisual.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    heroVisual.style.setProperty('--pointer-x', `${(x * 9).toFixed(2)}deg`);
+    heroVisual.style.setProperty('--pointer-y', `${(y * -9).toFixed(2)}deg`);
+    heroVisual.style.setProperty('--pointer-shift-x', `${(x * 12).toFixed(1)}px`);
+    heroVisual.style.setProperty('--pointer-shift-y', `${(y * 12).toFixed(1)}px`);
+  });
+  heroVisual.addEventListener('pointerleave', () => {
+    heroVisual.style.setProperty('--pointer-x', '0deg');
+    heroVisual.style.setProperty('--pointer-y', '0deg');
+    heroVisual.style.setProperty('--pointer-shift-x', '0px');
+    heroVisual.style.setProperty('--pointer-shift-y', '0px');
+  });
+}
 
 
 // 5) Small joy: draggable-ish subtle tilt on profile blob
@@ -93,104 +114,3 @@ if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').m
   document.querySelectorAll('.marquee-track').forEach(m => m.style.animation = 'none');
 } 
 
-/* Blob profile: auto-change images */
-(function () {
-  const images = [
-    'assets/images/avatar.jpeg',
-    'assets/images/DSC_5698.jpg'
-    ];
-
-  const blobCard = document.querySelector('.blob-card');
-  if (!blobCard) return;
-
-  const svgImage = blobCard.querySelector('svg image, svg IMAGE');
-  if (!svgImage) {
-    console.warn('Blob image element not found (expected svg image inside .blob-card).');
-    return;
-  }
-
-  const parent = svgImage.parentNode; 
-  if (!parent) return;
-
-  const attrs = {
-    x: svgImage.getAttribute('x') || '0',
-    y: svgImage.getAttribute('y') || '0',
-    width: svgImage.getAttribute('width') || svgImage.getAttribute('width') || '400',
-    height: svgImage.getAttribute('height') || svgImage.getAttribute('height') || '400',
-  };
-
-  let idx = 0;
-
-  const initialHref = svgImage.getAttribute('href') || svgImage.getAttributeNS('http://www.w3.org/1999/xlink','href') || '';
-  if (initialHref) {
-    const found = images.findIndex(p => p === initialHref);
-    if (found >= 0) idx = (found + 1) % images.length;
-  }
-
-  let interval = 4000;
-  let timer = null;
-  let paused = false;
-
-  function setHref(el, path) {
-    try {
-      el.setAttribute('href', path);
-    } catch (e) {
-      el.setAttributeNS('http://www.w3.org/1999/xlink', 'href', path);
-    }
-}
-
-function fadeToNext() {
-  const nextPath = images[idx % images.length];
-  idx = (idx + 1) % images.length;
-
-  const ns = 'http://www.w3.org/2000/svg';
-  const newImg = document.createElementNS(ns, 'image');
-
-  newImg.setAttribute('x', attrs.x);
-  newImg.setAttribute('y', attrs.y);
-  newImg.setAttribute('width', attrs.width);
-  newImg.setAttribute('height', attrs.height);
-
-  newImg.style.opacity = '0';
-  newImg.style.transition = 'opacity 600ms ease';
-  newImg.style.display = 'block';
-
-  setHref(newImg, nextPath);
-
-  parent.appendChild(newImg);
-
-  requestAnimationFrame(() => {
-    newImg.style.opacity = '1';
-  });
-
-  const cleanUp = () => {
-    Array.from(parent.querySelectorAll('image')).forEach(el => {
-      if (el !== newImg) {
-        try { parent.removeChild(el); } catch(e) {}
-      }
-    });
-  };
-
-  newImg.addEventListener('transitionend', () => {
-    setTimeout(cleanUp, 50);
-  }, { once: true });
-
-  setTimeout(cleanUp, 1200);
-}
-
-function start() {
-  stop();
-  timer = setInterval(() => { if (!paused) fadeToNext(); }, interval);
-}
-function stop() { if (timer) { clearInterval(timer); timer = null; } }
-
-blobCard.addEventListener('mouseenter', () => { paused = true; });
-blobCard.addEventListener('mouseleave', () => { paused = false; });
-
-blobCard.addEventListener('focusin', () => { paused = true; });
-blobCard.addEventListener('focusout', () => { paused = false; });
-
-setTimeout(start, 600);
-
-window.addEventListener('pagehide', stop);
-})();

@@ -28,7 +28,7 @@
     <section id="home" class="hero">
       <div class="glow-orb"></div>
 
-      <div class="fade-in-up" style="max-width:900px;">
+      <div class="hero-copy fade-in-up">
         <h1>Building digital <br><span>experiences</span> that matter.</h1>
         <p class="lead">Full Stack Developer passionate about building modern, fast, and reliable digital experiences.
 I create clean, user-focused interfaces and develop solid, scalable logic behind them.
@@ -36,9 +36,28 @@ Based in Morocco, constantly learning, improving, and crafting better solutions 
           <a href="#work" class="cta-btn">View My Work</a>
           <a href="#contact" class="cta-btn btn-outline">Contact Me</a>
       </div>
-      <!-- Hero Image (right side) -->
-      <div class="hero-image-wrapper fade-in-up" style="max-width:350px; margin-top:40px;">
-          <img src="assets/images/best me.jpg" alt="Profile" class="hero-profile-img">
+      <!-- Interactive developer constellation -->
+      <div class="hero-visual fade-in-up" aria-label="Interactive animated illustration of a developer workspace" role="img">
+        <div class="hero-visual-orbit hero-visual-orbit--one" aria-hidden="true"></div>
+        <div class="hero-visual-orbit hero-visual-orbit--two" aria-hidden="true"></div>
+        <div class="hero-visual-core" aria-hidden="true"><span>&lt;/&gt;</span></div>
+        <div class="hero-float-tag hero-float-tag--java"><i>J</i> Java</div>
+        <div class="hero-float-tag hero-float-tag--react"><i>✳</i> React</div>
+        <div class="hero-float-tag hero-float-tag--spring"><i>⌘</i> Spring</div>
+        <div class="hero-float-tag hero-float-tag--sql"><i>▤</i> SQL</div>
+        <div class="hero-code-card">
+          <div class="hero-code-top"><span></span><span></span><span></span><b>yassine.dev</b></div>
+          <div class="hero-code-body">
+            <div><em>const</em> idea = <strong>"solve it"</strong>;</div>
+            <div><em>while</em> (idea) {</div>
+            <div class="hero-code-indent">build(idea);</div>
+            <div class="hero-code-indent">ship(product);</div>
+            <div>}</div>
+            <div class="hero-code-cursor" aria-hidden="true"></div>
+          </div>
+          <div class="hero-code-footer"><span><i></i> Available to build</span><span>FULL STACK</span></div>
+        </div>
+        <div class="hero-visual-caption"><span></span> Turning ideas into working software</div>
       </div>
     </section>
 
@@ -51,7 +70,6 @@ Based in Morocco, constantly learning, improving, and crafting better solutions 
         <span class="tech-item">BOOTSTRAP</span>
         <span class="tech-item">JAVASCRIPT</span>
         <span class="tech-item">REACT</span>
-        <span class="tech-item">NODE.JS</span>
         <span class="tech-item">PHP</span>
         <span class="tech-item">MYSQL</span>
         <span class="tech-item">GIT</span>
@@ -61,63 +79,50 @@ Based in Morocco, constantly learning, improving, and crafting better solutions 
       </div>
     </div>
 
-    <!-- WORK / PORTFOLIO -->
-    <section id="work">
-      <h2 class="section-title fade-in-up">Selected Work</h2>
-      <div class="bento-grid fade-in-up">
-        <div class="bento-item large">
-          <div class="content">
-            <h3>Portail Client</h3>
-            <p>Full-stack application to create, organize, and track tasks with filtering, priority levels, and real-time updates. Includes authentication and responsive UI.</p>
-            <div class="small muted">• Role: Full Stack Developer <br>• Stack: Html, Css, JavaScript, Php, Mysql,   Docker, Git, GitHub</div>
-          </div>
-          <div class="card-visual"></div>
-        </div>
+    <!-- SELECTED WORK -->
+    <section id="work" class="projects-section">
+      <div class="projects-heading fade-in-up">
+        <div><span class="section-kicker">SELECTED WORK</span><h2 class="section-title">Projects with a story to tell.</h2></div>
+        <p>Explore the goal, architecture, trade-offs, and visual details behind each build.</p>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card project-card--featured fade-in-up">
+          <a class="project-card-link" href="projects/pixora.html" aria-label="Read the PIXORA case study">
+            <div class="project-card-media"><img src="assets/images/projects/pixora/pixora-analytics-feature.png" alt="PIXORA product analytics preview" loading="lazy"><span class="project-card-category">Live SaaS · Trading tools</span><span class="project-card-arrow" aria-hidden="true">↗</span></div>
+            <div class="project-card-body"><span class="project-number">PROJECT 01</span><h3>PIXORA — Trading Journal SaaS</h3><p>A subscription journal for logging trades, studying performance, tracking discipline, importing history, and replaying markets.</p></div>
+            <div class="project-card-footer"><div class="project-card-tags"><span>Java</span><span>Spring Boot</span><span>React</span><span>MySQL</span></div><span class="project-card-cta">Explore case study <b>→</b></span></div>
+          </a>
+        </article>
 
-        <div class="bento-item">
-          <div class="content">
-            <h3>Devoria — Matching Platform</h3>
-            <p>A developing platform connecting developers with clients based on project needs. Includes modules for profiles, portfolios, mission listings, and advanced search functionality.</p>
-            <div class="small muted">• Role: Full Stack Developer <br>• Stack: JavaScript, Node.js, Express.js, MongoDB, HTML/CSS.</div>
-          </div>
-          <div class="card-visual"></div>
-        </div>
+        <article class="project-card project-card--featured fade-in-up">
+          <a class="project-card-link" href="projects/edupresence.html" aria-label="Read the EduPresence case study">
+            <div class="project-card-media"><img src="assets/images/projects/edupresence/edupresence-dashboard-concept.png" alt="Illustrative EduPresence attendance dashboard concept" loading="lazy"><span class="project-card-category">Final Year Project · EST Meknès</span><span class="project-card-arrow" aria-hidden="true">↗</span></div>
+            <div class="project-card-body"><span class="project-number">PROJECT 02</span><h3>EduPresence — Intelligent Attendance</h3><p>A facial-recognition attendance platform with student, professor, and administrator workflows.</p></div>
+            <div class="project-card-footer"><div class="project-card-tags"><span>Java 21</span><span>Spring Boot</span><span>Python</span><span>FastAPI</span></div><span class="project-card-cta">Explore case study <b>→</b></span></div>
+          </a>
+        </article>
 
-        <div class="bento-item tall">
-          <div class="content">
-            <h3>User Management System</h3>
-            <p>CRUD web application built with modern JavaScript (ES Modules, OOP) allowing users to manage profiles with create, edit, delete, and search features. Includes data persistence through LocalStorage and optional deployment using Docker (Nginx).</p>
-            <div class="small muted">• Role: Front-end <br>• Stack: JavaScript (ES Modules), OOP, LocalStorage, Docker, Nginx</div>
-          </div>
-          <div class="card-visual"></div>
-        </div>
+        <article class="project-card project-card--featured fade-in-up">
+          <a class="project-card-link" href="projects/secureops.html" aria-label="Read the SecureOps case study">
+            <div class="project-card-media"><img src="assets/images/projects/secureops/secureops-detection-rules.png" alt="SecureOps detection rules screen from the project demo" loading="lazy"><span class="project-card-category">Defensive security · In progress</span><span class="project-card-arrow" aria-hidden="true">↗</span></div>
+            <div class="project-card-body"><span class="project-number">PROJECT 03</span><h3>SecureOps — Monitoring & Response</h3><p>A security operations dashboard connecting synthetic event detections to alert triage, incident handling, and audit review.</p></div>
+            <div class="project-card-footer"><div class="project-card-tags"><span>Java</span><span>TypeScript</span><span>Spring Boot</span><span>PostgreSQL</span></div><span class="project-card-cta">Explore case study <b>→</b></span></div>
+          </a>
+        </article>
 
-        <div class="bento-item">
-          <div class="content">
-            <h3>Portfolio Websites</h3>
-            <p>A modern, responsive personal portfolio built with clean UI, smooth animations, and a focus on simplicity and clarity.</p>
-            <div class="small muted">• Role: Full Stack Developer <br>• Stack: HTML, CSS, JavaScript</div>
-          </div>
-          <div class="card-visual"></div>
-        </div>
+        <article class="project-card project-card--featured fade-in-up">
+          <a class="project-card-link" href="projects/devoria.html" aria-label="Read the Devoria case study">
+            <div class="project-card-media"><img src="assets/images/projects/devoria/devoria-home.jpg" alt="Devoria live homepage" loading="lazy"><span class="project-card-category">Live platform · Community</span><span class="project-card-arrow" aria-hidden="true">↗</span></div>
+            <div class="project-card-body"><span class="project-number">PROJECT 04</span><h3>Devoria — Developer & Client Platform</h3><p>A platform for discovering developers, exploring work, and connecting around project needs.</p></div>
+            <div class="project-card-footer"><div class="project-card-tags"><span>React</span><span>TypeScript</span><span>Vite</span><span>Firebase</span></div><span class="project-card-cta">Explore case study <b>→</b></span></div>
+          </a>
+        </article>
 
-        <div class="bento-item tall">
-          <div class="content">
-            <h3>Banking CLI Application</h3>
-            <p>A modular command-line application developed in C for managing bank accounts and operations. Includes secure account creation, deposits, withdrawals, and transaction tracking. Designed with a clean architecture and a structured, menu-based interface.</p>
-            <div class="small muted">• Role: Software Developer <br>• Stack: C, Modular Architecture, CLI Interface</div>
-          </div>
-          <div class="card-visual"></div>
-        </div>
-
-        <div class="bento-item tall">
-          <div class="content">
-            <h3>Management Systems Suite — Java OOP</h3>
-            <p>Java-based OOP projects: Zoo, Hotel, and Cinema management systems showcasing modular design, entity handling, data persistence, and CRUD operations.</p>
-            <div class="small muted">• Role: Java Developer <br>• Stack: Java (OOP), Data Persistence, Desktop Application logic</div>
-          </div>
-          <div class="card-visual"></div>
-        </div>
+        <article class="project-card project-card--compact fade-in-up"><a class="project-card-link" href="projects/portail-client.html"><div class="project-card-media project-card-media--art"><div class="project-art"><div class="project-art-window"><div class="project-art-top"><span></span><span></span><span></span><b>PORTAL / TASKS</b></div><div class="project-art-lines"><i><b>Tasks</b><em></em></i><i><b>Priorities</b><em></em></i><i><b>Updates</b><em></em></i></div></div></div><span class="project-card-category">Web application</span><span class="project-card-arrow">↗</span></div><div class="project-card-body"><span class="project-number">PROJECT 05</span><h3>Portail Client</h3><p>A task portal with filtering, priorities, authentication, and responsive screens.</p></div><div class="project-card-footer"><div class="project-card-tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div><span class="project-card-cta">Explore case study <b>→</b></span></div></a></article>
+        <article class="project-card project-card--compact fade-in-up"><a class="project-card-link" href="projects/user-management-system.html"><div class="project-card-media project-card-media--art"><div class="project-art"><div class="project-art-window"><div class="project-art-top"><span></span><span></span><span></span><b>USER DIRECTORY</b></div><div class="project-art-lines"><i><b>Profiles</b><em></em></i><i><b>Search</b><em></em></i><i><b>Local data</b><em></em></i></div></div></div><span class="project-card-category">Frontend application</span><span class="project-card-arrow">↗</span></div><div class="project-card-body"><span class="project-number">PROJECT 06</span><h3>User Management System</h3><p>A browser-based CRUD app for profiles, search, and LocalStorage persistence.</p></div><div class="project-card-footer"><div class="project-card-tags"><span>JavaScript</span><span>ES Modules</span><span>LocalStorage</span></div><span class="project-card-cta">Explore case study <b>→</b></span></div></a></article>
+        <article class="project-card project-card--compact fade-in-up"><a class="project-card-link" href="projects/portfolio-website.html"><div class="project-card-media project-card-media--art"><div class="project-art"><div class="project-art-window"><div class="project-art-top"><span></span><span></span><span></span><b>YASSINE / PORTFOLIO</b></div><div class="project-art-lines"><i><b>Work</b><em></em></i><i><b>Skills</b><em></em></i><i><b>Experience</b><em></em></i></div></div></div><span class="project-card-category">Personal website</span><span class="project-card-arrow">↗</span></div><div class="project-card-body"><span class="project-number">PROJECT 07</span><h3>Portfolio Website</h3><p>A responsive portfolio for presenting projects, skills, and experience.</p></div><div class="project-card-footer"><div class="project-card-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><span class="project-card-cta">Explore case study <b>→</b></span></div></a></article>
+        <article class="project-card project-card--compact fade-in-up"><a class="project-card-link" href="projects/banking-cli.html"><div class="project-card-media project-card-media--art"><div class="project-art"><div class="project-art-window"><div class="project-art-top"><span></span><span></span><span></span><b>BANKING / CLI</b></div><div class="project-art-lines"><i><b>Accounts</b><em></em></i><i><b>Transactions</b><em></em></i><i><b>Operations</b><em></em></i></div></div></div><span class="project-card-category">Academic project</span><span class="project-card-arrow">↗</span></div><div class="project-card-body"><span class="project-number">PROJECT 08</span><h3>Banking CLI Application</h3><p>A modular C program for accounts, deposits, withdrawals, and transaction tracking.</p></div><div class="project-card-footer"><div class="project-card-tags"><span>C</span><span>CLI</span><span>Modular design</span></div><span class="project-card-cta">Explore case study <b>→</b></span></div></a></article>
+        <article class="project-card project-card--compact fade-in-up"><a class="project-card-link" href="projects/management-systems-suite.html"><div class="project-card-media project-card-media--art"><div class="project-art"><div class="project-art-window"><div class="project-art-top"><span></span><span></span><span></span><b>JAVA / MANAGEMENT</b></div><div class="project-art-lines"><i><b>Zoo</b><em></em></i><i><b>Hotel</b><em></em></i><i><b>Cinema</b><em></em></i></div></div></div><span class="project-card-category">Academic projects</span><span class="project-card-arrow">↗</span></div><div class="project-card-body"><span class="project-number">PROJECT 09</span><h3>Management Systems Suite</h3><p>Java OOP applications for zoo, hotel, and cinema management workflows.</p></div><div class="project-card-footer"><div class="project-card-tags"><span>Java</span><span>OOP</span><span>CRUD</span></div><span class="project-card-cta">Explore case study <b>→</b></span></div></a></article>
       </div>
     </section>
 
@@ -130,7 +135,7 @@ Based in Morocco, constantly learning, improving, and crafting better solutions 
 
           <p>I work with modern web technologies and love turning ideas into real, working applications—from frontend interfaces to backend logic and data handling. Learning, improving, and shipping better projects is what motivates me every day.</p>
 
-          <p class="small muted">Tech highlights: JavaScript (ES Modules), React, Node.js, Bootsrap, PHP, MySQL, HTML/CSS, Git/GitHub, UI/UX fundamentals.</p>
+          <p class="small muted">Tech highlights: JavaScript (ES Modules), React, Bootstrap, PHP, MySQL, HTML/CSS, Git/GitHub, UI/UX fundamentals.</p>
 
           <div style="margin-top:14px;">
             <a class="cta-btn" href="#contact">Let's work together</a>
@@ -144,25 +149,22 @@ Based in Morocco, constantly learning, improving, and crafting better solutions 
 
               <svg viewBox="0 0 400 400" width="360" height="360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="display:block;border-radius:18px;">
                 <defs>
-                  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="10" result="b"/>
-                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                  </filter>
-
                   <clipPath id="blobClip">
                     <circle cx="200" cy="200" r="170" />
                   </clipPath>
+                  <linearGradient id="portraitRing" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#6966ff" />
+                    <stop offset="0.52" stop-color="#9be0ff" />
+                    <stop offset="1" stop-color="#6966ff" />
+                  </linearGradient>
                 </defs>
 
-                <g filter="url(#soft)">
-                  <ellipse cx="240" cy="110" rx="140" ry="70" fill="url(#g1)" opacity="0.18"></ellipse>
-                </g>
-
                 <g clip-path="url(#blobClip)">
-                  <image x="0" y="0" width="400" height="400" href="assets/images/DSC_5698.jpg" preserveAspectRatio="xMidYMid slice" style="display:block; width:400px; height:400px;"></image>
+                  <image x="0" y="0" width="400" height="400" href="assets/images/avatar.jpeg" preserveAspectRatio="xMidYMid slice" style="display:block; width:400px; height:400px;"></image>
                 </g>
 
-                <circle cx="200" cy="200" r="170" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+                <circle cx="200" cy="200" r="170" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+                <circle class="portrait-orbit" cx="200" cy="200" r="178" fill="none" stroke="url(#portraitRing)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="118 1000" />
 
               </svg>
 
@@ -181,52 +183,39 @@ Based in Morocco, constantly learning, improving, and crafting better solutions 
     <!-- SKILLS -->
     <section id="skills" class="skills-section fade-in-up">
       <h2 class="section-title">Skills & Approach</h2>
+      <p class="section-intro">A practical toolkit built through my DUT coursework, internships, and full-stack projects.</p>
 
       <div class="skills-grid">
         <div class="skill-card">
-          <h4>Front-end Engineering — Modern Web</h4>
-          <div class="skill-desc">I build responsive and accessible interfaces using clean, semantic markup and modern JavaScript. I focus on writing component-based UIs, organizing styles efficiently, and delivering smooth, user-friendly experiences across devices. I enjoy turning design ideas into functional, polished interfaces that feel intuitive and fast.</div>
-          <div class="skill-meter" data-level="92"><span style="width:0%"></span></div>
-          <div class="skill-tools">
-            <span>HTML5</span><span>CSS3 / Grid / Flexbox</span><span>JS (ESNext)</span><span>React</span><span>Bootstrap</span>
-          </div>
-
-          <div class="skill-long">
-            <strong>Notes:</strong> I work with component-based UI, clean layouts, and reusable styles.
-          </div>
+          <h4>Programming Languages</h4>
+          <div class="skill-desc">I work across several languages, applying object-oriented programming and core computer science concepts to coursework and full-stack applications. My experience ranges from Java and TypeScript development to Python scripting, C fundamentals, and relational data work with SQL.</div>
+          <div class="skill-accent-line" aria-hidden="true"></div>
+          <div class="skill-tools"><span>Java</span><span>JavaScript</span><span>TypeScript</span><span>Python</span><span>C</span><span>PHP</span><span>SQL</span></div>
+          <div class="skill-long"><strong>Foundations:</strong> Object-oriented programming, algorithms, data structures, and relational data modeling.</div>
         </div>
 
         <div class="skill-card">
-          <h4>Backend Development — API & Databases</h4>
-          <div class="skill-desc">I develop server-side logic and RESTful APIs that connect applications to reliable data structures. I enjoy working on authentication, CRUD operations, request handling, and database integration. My focus is on building stable, secure, and scalable backend features that support real-world applications.</div>
-          <div class="skill-meter" data-level="70"><span style="width:0%"></span></div>
-          <div class="skill-tools"><span>Node.js</span><span>PHP</span><span>Oracle</span><span>Mysql</span><span>Oracle</span></div>
-
-          <div class="skill-long">
-            <strong>Approach:</strong> Experience designing relational schemas and building CRUD systems.
-          </div>
+          <h4>Frontend Development</h4>
+          <div class="skill-desc">I build responsive, component-based interfaces and connect them to application APIs. I focus on clear user flows, reusable UI, accessible structure, and polished layouts that work across screen sizes.</div>
+          <div class="skill-accent-line" aria-hidden="true"></div>
+          <div class="skill-tools"><span>React</span><span>HTML5</span><span>CSS</span><span>Tailwind CSS</span><span>Bootstrap</span></div>
+          <div class="skill-long"><strong>Practice:</strong> Component-based interfaces, responsive layouts, forms, charts, and client-side data fetching.</div>
         </div>
 
         <div class="skill-card">
-          <h4>Programming Fundamentals — CS & OOP</h4>
-          <div class="skill-desc">I have a solid foundation in computer science and software engineering principles. I work comfortably with multiple languages and understand how to structure programs using object-oriented concepts, clean logic, and algorithmic thinking. These fundamentals help me write better, more maintainable code across any stack.</div>
-          <div class="skill-meter" data-level="60"><span style="width:0%"></span></div>
-          <div class="skill-tools"><span>Python</span><span>Java OOP</span><span>C</span></div>
-
-          <div class="skill-long">
-            <strong>Example work:</strong> Understanding of data structures, algorithms, and object-oriented design.
-          </div>
+          <h4>Backend & Databases</h4>
+          <div class="skill-desc">I develop server-side features and REST APIs that connect application workflows to persistent data. My work includes authentication, authorization, request validation, business logic, and relational database design.</div>
+          <div class="skill-accent-line" aria-hidden="true"></div>
+          <div class="skill-tools"><span>Spring Boot</span><span>Spring Security</span><span>REST APIs</span><span>JWT</span><span>MySQL</span><span>PostgreSQL</span><span>JPA / Hibernate</span></div>
+          <div class="skill-long"><strong>Practice:</strong> Role-based access, input validation, database migrations, and relational schema design.</div>
         </div>
 
         <div class="skill-card">
-          <h4>Tooling & DX</h4>
-          <div class="skill-desc">I use modern development tools to improve productivity, maintain clean version control, and manage project environments effectively. I rely on these tools to streamline collaboration, automate tasks, and ensure consistent development across machines.</div>
-          <div class="skill-meter" data-level="80"><span style="width:0%"></span></div>
-          <div class="skill-tools"><span>Docker</span><span>Git</span><span>GitHub Actions</span><span>VS Code</span></div>
-
-          <div class="skill-long">
-            <strong>Practice:</strong> Version control, environment setup, and basic containerization.
-          </div>
+          <h4>Tools & Engineering</h4>
+          <div class="skill-desc">I use modern development tools to keep projects organized and repeatable. Version control, containerized environments, and automated workflows help me manage changes and run applications consistently.</div>
+          <div class="skill-accent-line" aria-hidden="true"></div>
+          <div class="skill-tools"><span>Git</span><span>GitHub</span><span>Docker</span><span>Docker Compose</span><span>GitHub Actions</span><span>Linux</span><span>UML</span></div>
+          <div class="skill-long"><strong>How I work:</strong> Version control, containerized development, automated workflows, system modeling, and Linux fundamentals.</div>
         </div>
       </div>
     </section>
@@ -237,10 +226,19 @@ Based in Morocco, constantly learning, improving, and crafting better solutions 
 
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-date">August — 2025</div>
+          <div class="timeline-date">Apr - May 2026</div>
           <div>
-            <div class="timeline-role">Stagiaire Développeur Full-Stack — <strong>Company KubOps Technology</strong></div>
-            <div class="timeline-desc">(France — télétravail depuis le Maroc) <br>Participated in the development of a client web portal using modern full-stack tools. Worked on interface integration, backend features, and database interactions. Contributed to Dockerized environments and collaborated with the team through Git workflows, pull requests, and code reviews. Also assisted with technical documentation and functional testing.</div>
+            <div class="timeline-role">Full-Stack Developer Intern - <strong>EmaNegoce</strong></div>
+            <div class="timeline-desc">Contributed to the design and development of a stock management and invoicing web application in Casablanca. Analyzed requirements, built backend features with Java and Spring Boot, developed the React interface, and integrated an Ollama-powered assistant that answers users' questions inside the application.</div>
+            <div class="timeline-badges"><span>Java</span><span>Spring Boot</span><span>React</span><span>Ollama</span><span>Stock Management</span><span>Invoicing</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Aug 2025</div>
+          <div>
+            <div class="timeline-role">Full-Stack Developer Intern — <strong>KubOps Technology</strong></div>
+            <div class="timeline-desc">Remote internship with a France-based team, working from Morocco. Contributed to a client web portal using HTML, CSS, PHP, and MySQL. Set up Dockerized development environments, collaborated through GitHub branches and pull requests, took part in code reviews and functional testing, and documented the work.</div>
             <div class="timeline-badges">
               <span>HTML</span><span>CSS</span><span>PHP</span><span>MySQL</span><span>Docker</span><span>Git</span><span>GitHub</span>
             </div>
